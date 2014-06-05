@@ -20,7 +20,12 @@ return @post.reverse
 end
 
 def list()
+		puts display_entry
+end
 
+def display_entry()
+ s = @name +  "\n"
+		@post.each {|p| s += p.display_entry + "\n"}
 end
 
 def find_post_by_title(title)

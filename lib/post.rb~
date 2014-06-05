@@ -4,14 +4,13 @@ require 'user.rb'
 class Post
 
 attr_reader :title , :text, :date,:user
-def initialize(title,text,date,user,filename = nil)
+def initialize(title,text,date,user)
 @title = title
 @text = text
 @date = date
 @user = user
-@posts =[]
-@posts = YAML::load(File.new('default','r')) 
 
+@posts = YAML::load(File.new('noss','r')) 
 end
 
 def summary()
