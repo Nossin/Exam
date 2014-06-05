@@ -8,7 +8,10 @@ describe Post do
     end
 
     context "with proper attributes" do
-      it "should properly initialize a post instance"
+      it "should properly initialize a post instance" do
+      post = Post.new('im good','lksdajlakjdlkjadkld','13/03/23')
+      expect(post).is_a?(Post)
+     end
     end
 
   end
