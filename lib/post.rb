@@ -11,13 +11,18 @@ def initialize(title,text,date)
 end
 
 def summary()
-
+@text.split("").first(10).join("")
+return words10 = @text[0..9]
 end
 
 def tagme()
 end
 
-def same?
+def same?(Post)
+if(@title == Post.title && @text == Post.text && @date == Post.date )
+ true
+else
+false
 end
 
 end
