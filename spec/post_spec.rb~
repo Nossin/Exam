@@ -31,7 +31,7 @@ describe Post do
     it "should return true if Title, Date and Text are the same" do
     post = Post.new('im good',"lksdajlakjdlkjadkld",'13/03/23')
     post2 = Post.new('im good',"lksdajlakjdlkjadkld",'13/03/23')
-     expect(post.same?(post2).to eql(true)
+     expect(post.same?(post2)).to eql(true)
     end
     it "should return false if Title, Date and Text are not the same"
   end

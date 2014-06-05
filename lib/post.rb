@@ -3,11 +3,14 @@ require 'user.rb'
 
 class Post
 
-attr_reader :title , :text, :date,:user
-def initialize(title,text,date)
+attr_reader :title , :text, :date,:user 
+def initialize(title,text,date,user)
 @title = title
 @text = text
 @date = date
+@user = user
+
+
 end
 
 def summary()
@@ -18,11 +21,12 @@ end
 def tagme()
 end
 
-def same?(Post)
-if(@title == Post.title && @text == Post.text && @date == Post.date )
- true
-else
-false
+def same?
 end
 
+def save
+File.open @title + ".yml", 'w' do |f|
+ f.write YAML::dump @products
+end
+end
 end

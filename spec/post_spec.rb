@@ -9,7 +9,7 @@ describe Post do
 
     context "with proper attributes" do
       it "should properly initialize a post instance" do
-      post = Post.new('im good','lksdajlakjdlkjadkld','13/03/23')
+      post = Post.new('im good','lksdajlakjdlkjadkld','13/03/23','Noss')
       expect(post).is_a?(Post)
      end
     end
@@ -17,7 +17,7 @@ describe Post do
   end
   describe "#summary" do
     it "should display the first 10 words of text" do 
-    post = Post.new('im good',"lksdajlakjdlkjadkld",'13/03/23')
+    post = Post.new('im good',"lksdajlakjdlkjadkld",'13/03/23','Noss')
       expect(post.summary).to eql('lksdajlakj')
    end
   end
@@ -29,8 +29,8 @@ describe Post do
 
   describe "#same?" do
     it "should return true if Title, Date and Text are the same" do
-    post = Post.new('im good',"lksdajlakjdlkjadkld",'13/03/23')
-    post2 = Post.new('im good',"lksdajlakjdlkjadkld",'13/03/23')
+    post = Post.new('im good',"lksdajlakjdlkjadkld",'13/03/23','Noss')
+    post2 = Post.new('im good',"lksdajlakjdlkjadkld",'13/03/23','Noss')
      expect(post.same?(post2)).to eql(true)
     end
     it "should return false if Title, Date and Text are not the same"

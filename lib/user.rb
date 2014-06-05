@@ -11,7 +11,7 @@ end
 
 def add_post(title,text,date)
 @post_count = @post_count + 1
-post = Post.new(title,text,date)
+post = Post.new(title,text,date, @name)
 @post << post
 end
 

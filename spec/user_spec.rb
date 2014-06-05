@@ -25,7 +25,7 @@ describe User do
     it "should return a post by title" do
       user = User.new('Nossin')
     user.add_post('Great times','ldkjslkjdslkdal','12/23/93')
-    expect(user.find_post_by_title).to eql('Great times')
+    expect(user.find_post_by_title).to eql()
    end
     it "should return the first one if there are several with the same name"
   end
