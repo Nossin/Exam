@@ -3,13 +3,14 @@ require 'user.rb'
 
 class Post
 
-attr_reader :title , :text, :date,:user 
-def initialize(title,text,date,user)
+attr_reader :title , :text, :date,:user
+def initialize(title,text,date,user,filename = nil)
 @title = title
 @text = text
 @date = date
 @user = user
-
+@posts =[]
+@posts = YAML::load(File.new('default','r')) 
 
 end
 
@@ -25,8 +26,8 @@ def same?
 end
 
 def save
-File.open @user + ".yml", 'w' do |f|
- f.write YAML::dump @products
+File.open @title + ".yml", 'w' do |f|
+ f.write YAML::dump @posts 
 end
 end
 end
