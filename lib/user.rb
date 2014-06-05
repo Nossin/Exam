@@ -29,7 +29,8 @@ def display_entry()
 end
 
 def find_post_by_title(title)
-return @post.select {|po| po.title == title }
+ if @post.any?{|pl| pl.title == title}
+   return @post[@post.find_index{|pl| pl.title == title}]
 end
-
+end
 end
